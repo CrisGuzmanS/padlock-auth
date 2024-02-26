@@ -14,7 +14,7 @@ export class Token {
         return true;
     }
     static create(payload) {
-        jwt.sign(payload, env('JWT_SECRET_KEY'), {
+        return jwt.sign(payload, env('JWT_SECRET_KEY'), {
             expiresIn: env('JWT_EXPIRES_IN', '2h')
         });
     }
