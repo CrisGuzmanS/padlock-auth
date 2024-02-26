@@ -1,6 +1,6 @@
 {
   "name": "padlock-auth",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Middleware & Services to implement token creation & validation for express app.",
   "main": "index.js",
   "type": "module",
