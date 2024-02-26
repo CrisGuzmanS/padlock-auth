@@ -5,7 +5,13 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "build": "tsc --project ./tsconfig.json"
+    "build:ts": "tsc --project ./tsconfig.json",
+    "build": "npm run build:ts",
+    "prepare": "npm run build",
+    "preversion": "npm run lint",
+    "prepublishOnly": "npm test && npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
   },
   "keywords": [
     "auth",
@@ -22,5 +28,9 @@
   },
   "dependencies": {
     "jsonwebtoken": "^9.0.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CrisGuzmanS/padlock-auth"
   }
 }
