@@ -1,0 +1,23 @@
+{
+    "compilerOptions": {
+        "outDir": "./dist",
+        "target": "es6",
+        "module": "es6",
+        "moduleResolution": "node",
+        "esModuleInterop": true,
+        "removeComments": true,
+        "strict": true,
+        "typeRoots": ["./types"],
+        "baseUrl": "./",
+        "paths": {
+            "*": ["src/*"]
+        }
+    },
+    "include": [
+        "src/**/*.ts",
+        "jest.config.ts"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}

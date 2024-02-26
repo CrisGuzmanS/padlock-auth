@@ -1,0 +1,26 @@
+{
+  "name": "padlock-auth",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc --project ./tsconfig.json"
+  },
+  "keywords": [
+    "auth",
+    "security",
+    "token",
+    "tokens",
+    "jwt",
+    "jsonwebtoken"
+  ],
+  "author": "cristian.guzman.contacto@gmail.com",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jsonwebtoken": "9.0.5"
+  },
+  "dependencies": {
+    "jsonwebtoken": "^9.0.2"
+  }
+}
