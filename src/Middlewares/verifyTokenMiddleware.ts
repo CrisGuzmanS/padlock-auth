@@ -1,7 +1,11 @@
 import { Token } from "../Services/Token.js";
 
 /**
- * Valida que el usuario esté autenticado al hacer peticiones en las URL.
+ * Verifies the token provided in the header
+ * 
+ * @param {any} request
+ * @param {any} response
+ * @param {any} next
  */
 export const verifyTokenMiddleware = (request: any, response: any, next: any) => {
 
@@ -9,13 +13,13 @@ export const verifyTokenMiddleware = (request: any, response: any, next: any) =>
 
     if (!token) {
         return response.status(403).json({
-            message: 'No se proporcionó ningún token'
+            message: 'There is no token provided'
         });
     }
 
     if (!Token.isValid(token)) {
         return response.status(403).json({
-            message: 'Credenciales inválidas'
+            message: 'Invalid token'
         });
     }
 
