@@ -3,12 +3,12 @@ export const verifyTokenMiddleware = (request, response, next) => {
     const token = request.headers.authorization;
     if (!token) {
         return response.status(403).json({
-            message: 'No se proporcionó ningún token'
+            message: 'There is no token provided'
         });
     }
     if (!Token.isValid(token)) {
         return response.status(403).json({
-            message: 'Credenciales inválidas'
+            message: 'Invalid token'
         });
     }
     next();
