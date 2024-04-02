@@ -1,12 +1,14 @@
 {
   "name": "padlock-auth",
-  "version": "1.0.4",
+  "version": "2.0.0",
   "description": "Middleware & Services to implement token creation & validation for express app.",
-  "main": "index.js",
+  "main": "dist/index.umd.cjs",
+  "types": "types/arrowy-env.d.ts",
   "type": "module",
   "scripts": {
     "build:ts": "tsc --project ./tsconfig.json",
-    "build": "npm run build:ts"
+    "build:umd": "rollup -c rollup.config.js",
+    "build": "npm run build:ts && npm run build:umd"
   },
   "keywords": [
     "auth",
@@ -19,10 +21,14 @@
   "author": "cristian.guzman.contacto@gmail.com",
   "license": "MIT",
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
     "@types/jsonwebtoken": "9.0.5"
   },
   "dependencies": {
-    "jsonwebtoken": "^9.0.2"
+    "arrowy-env": "^2.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "rollup": "^4.13.2"
   },
   "repository": {
     "type": "git",
