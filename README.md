@@ -33,3 +33,8 @@ const token = Token.create({ userId: user.id });
 ```
 JWT_EXPIRES_IN = '2h'
 ```
+
+7. (Optional and not recomendable) define if you want to disable the token verification in the `.env` file:
+```
+VERIFY_TOKEN = 'false'
+```

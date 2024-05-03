@@ -1,6 +1,6 @@
 {
   "name": "padlock-auth",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Middleware & Services to implement token creation & validation for express app.",
   "main": "dist/index.umd.cjs",
   "types": "types/arrowy-env.d.ts",

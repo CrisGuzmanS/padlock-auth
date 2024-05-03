@@ -25,6 +25,9 @@
     }
 
     const verifyTokenMiddleware = (request, response, next) => {
+        if (arrowyEnv.env('VERIFY_TOKEN') === 'false') {
+            return next();
+        }
         const token = request.headers.authorization;
         if (!token) {
             return response.status(403).json({

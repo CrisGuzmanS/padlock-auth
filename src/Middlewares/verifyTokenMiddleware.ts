@@ -1,4 +1,5 @@
 import { Token } from "../Services/Token.js";
+import { env } from 'arrowy-env';
 
 /**
  * Verifies the token provided in the header
@@ -8,6 +9,9 @@ import { Token } from "../Services/Token.js";
  * @param {any} next
  */
 export const verifyTokenMiddleware = (request: any, response: any, next: any) => {
+    if (env('VERIFY_TOKEN') === 'false') {
+        return next();
+    }
 
     const token = request.headers.authorization;
 
